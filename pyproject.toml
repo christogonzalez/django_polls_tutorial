@@ -1,0 +1,15 @@
+[project]
+name = "django-polls"
+version = "0.1.0"
+description = "Getting familiar with dev tools used by OLA"
+authors = [
+    { name = "Christopher Gonzalez", email = "cgonzalez3@arizona.edu"}
+]
+requires-python = ">=3.14"
+dependencies = [
+    "django"
+]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
