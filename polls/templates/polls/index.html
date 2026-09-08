@@ -1,7 +1,7 @@
 {% if latest_question_list %}
     <ul>
     {% for question in latest_question_list %}
-        <-- url is replace by name vlaue in polls.urls --!>
+        <!-- url is replace by name vlaue in polls.urls -->
         <li><a href="{% url 'polls:detail' question_id %}">{{ question.question_text }}</a></li>
     {% endfor %}
     </ul>
