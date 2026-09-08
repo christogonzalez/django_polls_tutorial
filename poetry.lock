@@ -38,6 +38,21 @@ argon2 = ["argon2-cffi (>=23.1.0)"]
 bcrypt = ["bcrypt (>=4.1.1)"]
 
 [[package]]
+name = "django-urls"
+version = "1.1.4"
+description = "URL decorator for django views"
+optional = false
+python-versions = ">=3.5"
+groups = ["main"]
+files = [
+    {file = "django_urls-1.1.4-py3-none-any.whl", hash = "sha256:bf3c1785dfd53b640aac3f46054d5e423355b145bf9796105191cca12493b1a4"},
+    {file = "django_urls-1.1.4.tar.gz", hash = "sha256:0eeafed8873c8bce802d58a82ece1c33e2174af6331f2cc018a610413f44854b"},
+]
+
+[package.dependencies]
+django = ">=2.0"
+
+[[package]]
 name = "sqlparse"
 version = "0.6.0"
 description = "A non-validating SQL parser."
@@ -66,7 +81,18 @@ files = [
     {file = "tzdata-2026.3.tar.gz", hash = "sha256:4a1518b8993086a7982523e071643f3c0e5f213e75b21318e78bcabfff9d1415"},
 ]
 
+[[package]]
+name = "views"
+version = "0.3"
+description = "views"
+optional = false
+python-versions = "*"
+groups = ["main"]
+files = [
+    {file = "views-0.3.tar.gz", hash = "sha256:17f60ecbc213d5aaa8f5359973ab8840071123547e1897cae2f6e762b62dcd68"},
+]
+
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.14"
-content-hash = "e7ebf3f2ad55620dd474f17b1a790832e5b7735a1c36178b327b1e390e6448c9"
+content-hash = "90a865b6eae6347f804922722925aad5699bc906d5fa4d67a76eb46e241138a0"

@@ -7,7 +7,9 @@ authors = [
 ]
 requires-python = ">=3.14"
 dependencies = [
-    "django"
+    "django",
+    "django-urls (>=1.1.4,<2.0.0)",
+    "views (>=0.3,<0.4)"
 ]
 
 [build-system]
