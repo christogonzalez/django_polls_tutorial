@@ -5,3 +5,9 @@ li a {
 body {
     background: white url("images/background.png") no-repeat;
 }
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
