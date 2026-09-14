@@ -12,6 +12,7 @@ class Question(models.Model):
     def __str__(self):
         return self.question_text
 
+    # Changes the order in which these fields appear in the admin page
     @admin.display(
         boolean=True,
         ordering="pub_date",
