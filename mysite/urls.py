@@ -20,7 +20,11 @@ from django.urls import include, path
 
 from debug_toolbar.toolbar import debug_toolbar_urls
 
+from django.views.generic.base import RedirectView
+
 urlpatterns = [
     path("polls/", include("polls.urls")),
     path("admin/", admin.site.urls),
+    # Redirect the root URL to /polls/
+    path("", RedirectView.as_view(url="polls/", permanent=True)),
 ] + debug_toolbar_urls()
