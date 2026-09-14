@@ -3,11 +3,15 @@ li a {
 }
 
 body {
-    background: white url("images/background.png") no-repeat;
+    background: white url("images/background.png");
 }
 
-.title {
+.title_div {
+    min-height: 100vh;
+
     display: flex;
+    flex-direction: column;
+
     justify-content: center;
     align-items: center;
 }

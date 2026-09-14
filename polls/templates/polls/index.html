@@ -1,15 +1,20 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'polls/style.css' %}">
 
-<div class="title">
-{% if latest_question_list %}
-    <ul>
-    {% for question in latest_question_list %}
-        <!-- url is replace by name vlaue in polls.urls -->
-        <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No polls are available.</p>
-{% endif %}
+<div class="title_div">
+
+    <h1>Questions</h1>
+    <h2>Click each for more details!</h2>
+
+    {% if latest_question_list %}
+        <ul>
+        {% for question in latest_question_list %}
+            <!-- url is replace by name vlaue in polls.urls -->
+            <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No polls are available.</p>
+    {% endif %}
+
 </div>
