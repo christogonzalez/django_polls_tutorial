@@ -4,9 +4,16 @@ I created the boilerplate for this project using: https://docs.djangoproject.com
 
 The views/html files are different than the expected output since I made my own personalized edits!
 
+To start the project, run these two commands!
+
+``` Bash
+django-admin startproject mysite djangotutorial
+python manage.py startapp polls
+```
+
 ## Endpoints
 
-These are all the endpoints that I used throughout my project!
+These are all the endpoints that I used throughout my project! All of these where configured in the various `url.py` files found in this repo. Some of the endpoints are standard Django, especially on the admin side since that is an app that is pre-built. But that python file is where you create the format for each endpoint!
 
 For context, http://127.0.0.1:8000 is the local port I used but that can change per user. Focus on the end-bit of each url.
 
@@ -21,11 +28,11 @@ For context, http://127.0.0.1:8000 is the local port I used but that can change 
 Within the Django repo, you are given `models.py` that allows you to create Python objects that you want created into sql tables. This is done through the following two commands:
 
 ``` Bash
-python manage.py migrate
 python manage.py makemigrations polls
+python manage.py migrate
 ```
 
-Which will look through the changes made to the repo's model, convert that new Python code into sql injections, and then uses those to update your database!
+Which will look through the changes made to the repo's model, convert that new Python code into sql injections, and then uses those to update your database! The first command commits your changes to the models and then the second one actually pushes them to the databases you are connected to.
 
 ### Questions
 
@@ -38,9 +45,13 @@ Lastly, a method named `was_published_recently` is created to compare the publis
 
 ### Choices
 
-Questions need to have answers, and that's where this model ties in. The different 
+Questions need to have answers, and that's where this model ties in. The different answer and their votes are stored within this object in the following format:
 
-### Model-Controller-View
+- the question this choice is answering (stored as mode.Question type)
+- the text representing the choice (stored as a string)
+- the amount of votes recieved for this choice (stored as an int)
+
+### Model-View-Controller
 
 After doing some research, I have found that Django follows a different architecture (Model-Template-View) to structure their projects. But I will relate what I have learned back to system that I am much more familar with!
 
@@ -49,3 +60,7 @@ After doing some research, I have found that Django follows a different architec
 - View -> templates/polls/ since it contains all the `.html` files that direclty edit what the user is viewing
 
 There are more parts that contribute into the cycle of user interactions to the databases and then back to the user as a view. One being `urls.py` handling the routing of different endpoints. Additionally, `manage.py` is used as an administration tool to call the Django API that allows you to create more questions within this project.
+
+## Secret-key
+
+This is stored in `mysite/settings.py`! Commiting this to repo isn't something to worry about now but you can rotate it, followed by setting a GitHub varaible or creating a `.env` file

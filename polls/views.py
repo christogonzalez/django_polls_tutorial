@@ -4,9 +4,9 @@ from django.views import generic
 from django.urls import reverse
 from django.db.models import F
 
-from .models import Question, Choice
-
 from django.utils import timezone
+
+from .models import Question, Choice
 
 
 class IndexView(generic.ListView):
