@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     # custom
     "polls.apps.PollsConfig",
+    "debug_toolbar",
 ]
 
 MIDDLEWARE = [
@@ -49,6 +50,8 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    # Custom
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
 ROOT_URLCONF = "mysite.urls"
@@ -118,3 +121,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = "static/"
+
+
+# For debug purposes
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
