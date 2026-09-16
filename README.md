@@ -2,14 +2,23 @@
 
 I created the boilerplate for this project using: https://docs.djangoproject.com/en/5.2/intro/tutorial01/
 
-The views/html files are different than the expected output since I made my own personalized edits!
+The views/html files are different than the expected output since I made my own personalized edits! For this project I used two tools for development:
 
-To start the project, run these two commands!
+- Conda for my environment manager
+- Poetry as my package manager 
+
+** What is Django? **
+
+It's a full-stack tool that helps you create a skeleton design of an app to easily allow you to scale-up into fully functioning system. This is done by doing most of the heavy-lifting in the backend by allowing you to write your ideas in python, something more familar to people, that is then transcribed into your preferred relational database language. It also simplifies testing and routing by allowing you to control these features through python scripts.
+
+** To start the project, run these two commands! **
 
 ``` Bash
 django-admin startproject mysite djangotutorial
 python manage.py startapp polls
 ```
+
+You can infer that a project can contain multiple apps, where the initial one is mysite and then we add polls to the project in the second command. This shows how Django allows you to scale up a simple project into much more complex systems by allowing you to add stand-alone apps that are the routed together through the python scripts generated in the repo! You can learn more about this in the link above.
 
 ## Endpoints
 
@@ -64,3 +73,16 @@ There are more parts that contribute into the cycle of user interactions to the 
 ## Secret-key
 
 This is stored in `mysite/settings.py`! Commiting this to repo isn't something to worry about now but you can rotate it, followed by setting a GitHub varaible or creating a `.env` file
+
+## API Testing
+
+Django comes with its own shell, which you can call by typing the following command, `python manage.py shell`. Here is an example of some python code you could write that will affect your database!
+
+``` python
+from django.utils import timezone
+q = Question(question_text="Does pineapple belong on pizza?", pub_date=timezone.now())
+q.save()
+
+q.choice_set.create(choice_text="Of course!", votes=0)
+q.choice_set.create(choice_text="That's evil, no!", votes=0)
+```
