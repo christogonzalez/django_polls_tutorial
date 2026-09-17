@@ -7,11 +7,11 @@ The views/html files are different than the expected output since I made my own 
 - Conda for my environment manager
 - Poetry as my package manager 
 
-** What is Django? **
+**What is Django?**
 
 It's a full-stack tool that helps you create a skeleton design of an app to easily allow you to scale-up into fully functioning system. This is done by doing most of the heavy-lifting in the backend by allowing you to write your ideas in python, something more familar to people, that is then transcribed into your preferred relational database language. It also simplifies testing and routing by allowing you to control these features through python scripts.
 
-** To start the project, run these two commands! **
+**To start the project, run these two commands!**
 
 ``` Bash
 django-admin startproject mysite djangotutorial
